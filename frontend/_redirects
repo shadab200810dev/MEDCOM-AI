@@ -1,0 +1,12 @@
+# Netlify proxies API calls to the Flask service. Replace this host after the backend is deployed.
+/api/* https://YOUR-RENDER-SERVICE.onrender.com/api/:splat 200
+
+# The Flask version serves these assets under /assets; Netlify publishes them from the frontend root.
+/assets/* /:splat 200
+
+# Preserve the page URLs used by the sidebar links.
+/patients /patient_registry.html 200
+/evacuation /evacuation_command.html 200
+/map /situation_map.html 200
+/events /alerts_events.html 200
+/analytics /mission_analytics.html 200
